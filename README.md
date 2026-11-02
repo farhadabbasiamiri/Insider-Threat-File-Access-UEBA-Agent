@@ -1,6 +1,6 @@
 # Insider Threat File Access UEBA Agent
 
-**Group 8A** · Applied AI Agents for Cybersecurity Operations · Laurentian University · Fall 2026 · Defensive use only
+**Group 8A** · Applied AI Agents for Cybersecurity Operations · Laurentian University · Fall 2026 · Supervised by Professor Farhad Abbasi Amiri · Defensive use only
 
 A user and entity behaviour analytics (UEBA) agent that learns what normal file activity looks like for each person and department. It flags unusual activity such as mass downloads, after-hours access, sensitive files from other departments and transfers from unmanaged devices. For each flag it shows the evidence, cites the organisation's policy and drafts a privacy-preserving case summary. **A human must review every summary before any action is taken.**
 
@@ -23,6 +23,7 @@ A user and entity behaviour analytics (UEBA) agent that learns what normal file 
 - [Project structure](#project-structure)
 - [Testing](#testing)
 - [Privacy, safety and licences](#privacy-safety-and-licences)
+- [Team](#team)
 - [Team roles](#team-roles)
 - [Documentation](#documentation)
 - [Limitations](#limitations)
@@ -391,6 +392,19 @@ Each module boundary is developed test-first. CERT tests use a small hand-made f
 | Synthetic data | Our own |
 | Python libraries | pandas, NumPy, scikit-learn and FAISS are BSD/MIT. Faker is MIT |
 | Models | gemma4 and embeddinggemma: check the Gemma terms on [ollama.com/library](https://ollama.com/library) before use |
+
+## Team
+
+**Supervisor:** Professor Farhad Abbasi Amiri
+
+| Member | Student ID |
+|---|---|
+| Vaibhav Bhaskar | 0480343 |
+| Sylvester Rozario | 0479529 |
+| Istihad Nabi | 0481160 |
+| Jai Dey | 0477282 |
+| Kh Md Nazmul Hossain | — |
+| Mahedi Hasan Shaon | — |
 
 ## Team roles
 
