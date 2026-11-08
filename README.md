@@ -82,7 +82,7 @@ The diagram source is [docs/architecture.mmd](docs/architecture.mmd) (Mermaid). 
 | [Ollama](https://ollama.com) | recent | Download from ollama.com. Needed for embeddings and the agent |
 | Disk | about 6 GB | For the CERT download (optional) |
 
-### Steps
+### macOS and Linux
 
 ```bash
 # 1. Clone
@@ -104,6 +104,25 @@ ollama pull llama3.2           # second LLM for the RQ4 comparison (~2 GB, optio
 ```
 
 > **Folder names containing `:`** (for example `Ai:Ml in Cybersecurity`) break `uv run`, because `:` is the PATH separator. That's why the commands here call `.venv/bin/python` directly. In a folder without `:`, `uv run python -m ...` works too.
+
+### Windows quick start (PowerShell)
+
+With Git and `uv` installed, open PowerShell in the cloned repository. These commands run the synthetic demo with TF-IDF policy search and template Case Summaries, so you can start without CERT or Ollama.
+
+```powershell
+uv sync --locked
+$env:PYTHONPATH = (Resolve-Path .\src).Path
+$env:UEBA_RAG = 'tfidf'
+$env:UEBA_LLM = 'none'
+
+# Check the synthetic pipeline and privacy fallback before opening the dashboard.
+uv run --locked python -m pytest tests/test_demo.py -q
+
+uv run --locked python -m ueba.generator --out data/processed/synthetic
+uv run --locked python -m streamlit run src/ueba/app.py
+```
+
+Open [the local dashboard](http://localhost:8501) and follow the [demo walkthrough](#open-the-dashboard) from Risk Ranking through the Review Decision. The environment variables apply to the current PowerShell window, so set them again when starting a new session.
 
 ## Data setup
 
